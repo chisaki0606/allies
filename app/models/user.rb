@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  PERMITTED_PARAMS = [:name, :email, :password, :sexual_details, :love_details, :introduction]
+
   validates :name, {presence: true}
   validates :email, {presence: true, uniqueness: true}
   validates :password, {presence: true}

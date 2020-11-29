@@ -318,10 +318,14 @@
   margin-top: 20px;
 }
 
-.user-edit-form input[name="name"], input[name="email"], input[name="password"], input[name="sexual_details"], input[name="love_details"] {
-  width: 500px;
-  height: 26px;
-  font-size: 16px;
+.user-edit-form input[name="name"] {
+  background-color: #FEA7C0;
+}
+
+.user-edit-form input[type="text"], input[type="email"], input[type="password"] {
+  width: 500px !important; 
+  height: 26px !important;
+  font-size: 16px !important;
 }
 
 .user-edit-form select {

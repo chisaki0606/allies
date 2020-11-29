@@ -6,43 +6,30 @@
         <%= message %>
       </div>
     <% end %>
-    <%= form_tag("/users/#{@user.id}/update", {multipart: true}) do %>
+
+    <%= form_with model: @user do |f| %>
       <p>ユーザー名</p>
-      <input name="name" value="<%= @user.name %>">
+      <%= f.text_field :name %>
       <p>画像</p>
-      <input name="image" type="file">
+      <%= f.file_field :image %>
       <p>メールアドレス</p>
-      <input name="email" value="<%= @user.email %>">
+      <%= f.email_field :email %>
       <p>パスワード</p>
-      <input name="password" type="password" value="<%= @user.password %>">
+      <%= f.password_field :password, value: @user.password %>
       <p>セクシュアリティ</p>
-      <select name="sexual">
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="FtM">FtM</option>
-        <option value="FtX">FtX</option>
-        <option value="MtF">MtF</option>
-        <option value="MtX">MtX</option>
-        <option value="Queer">Queer</option>
-        <option value="DSD">DSD</option>
-        <option value="その他">その他</option>
-      </select>
+      <%= f.select :sexual, [["female", "female"], ["male", "male"], ["FtM", "FtM"], ["FtX", "FtX"], ["MtF", "MtF"], ["MtX", "MtX"], ["Queer", "Queer"], ["DSD", "DSD"], ["その他", "その他"]], include_blank: "セクシュアリティを選択" %>
       <p>詳細なセクシュアリティ</p>
-      <input name="sexual_details" value="<%= @user.sexual_details %>">
+      <%= f.text_field :sexual_details %>
       <p>恋愛対象</p>
-      <select name="love">
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="バイセクシュアル">バイセクシュアル</option>
-        <option value="パンセクシュアル">パンセクシュアル</option>
-        <option value="アセクシュアル">アセクシュアル </option>
-        <option value="その他">その他</option>
-      </select>
+      <%= f.select :love, [["female", "female"], ["male", "male"], ["バイセクシュアル", "バイセクシュアル"], ["パンセクシュアル", "パンセクシュアル"], ["アセクシュアル", "アセクシュアル"], ["その他", "その他"]], include_blank: "恋愛対象を選択" %>
       <p>詳細な恋愛対象</p>
-      <input name="love_details" value="<%= @user.love_details %>">
+      <%= f.text_field :love_details %>
       <p>自己紹介</p>
-      <textarea name="introduction"><%= @user.introduction %></textarea>
-      <input type="submit" value="保存">
+      <%= f.text_area :introduction %>
+      <%= f.submit "保存" %>
     <% end %>
+
+
   </div>
 </div>
+

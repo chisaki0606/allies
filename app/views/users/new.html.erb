@@ -1,37 +1,18 @@
 <div class="signup">
   <h1>新規ユーザー登録</h1>
   <div class="signup-form">
-    <%= form_tag("/users/create") do %>
+    <%= form_with model: @user do |f| %>
       <p>ユーザー名</p>
-      <input name="name">
+      <%= f.text_field :name %>
       <p>メールアドレス</p>
-      <input name="email">
+      <%= f.email_field :email %>
       <p>パスワード</p>
-      <input name="password" type="password">
+      <%= f.password_field :password %>
       <p>セクシュアリティ</p>
-      <select name="sexual" required >
-        <option value="">セクシュアリティを選択</option>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="FtM">FtM</option>
-        <option value="FtX">FtX</option>
-        <option value="MtF">MtF</option>
-        <option value="MtX">MtX</option>
-        <option value="Queer">Queer</option>
-        <option value="DSD">DSD</option>
-        <option value="その他">その他</option>
-      </select>
+      <%= f.select :sexual, [["female", "female"], ["male", "male"], ["FtM", "FtM"], ["FtX", "FtX"], ["MtF", "MtF"], ["MtX", "MtX"], ["Queer", "Queer"], ["DSD", "DSD"], ["その他", "その他"]], include_blank: "セクシュアリティを選択" %>
       <p>恋愛対象</p>
-      <select name="love" required >
-        <option value="">恋愛対象を選択</option>
-        <option value="female">female</option>
-        <option value="male">male</option>
-        <option value="バイセクシュアル">バイセクシュアル</option>
-        <option value="パンセクシュアル">パンセクシュアル</option>
-        <option value="アセクシュアル">アセクシュアル </option>
-        <option value="その他">その他</option>
-      </select>
-      <input type="submit" value="新規登録">
+      <%= f.select :love, [["female", "female"], ["male", "male"], ["バイセクシュアル", "バイセクシュアル"], ["パンセクシュアル", "パンセクシュアル"], ["アセクシュアル", "アセクシュアル"], ["その他", "その他"]], include_blank: "恋愛対象を選択" %>
+      <%= f.submit "新規登録" %>
     <% end %>
   </div>
 </div>

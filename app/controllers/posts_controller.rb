@@ -1,15 +1,13 @@
 class PostsController < ApplicationController
-
   before_action :authenticate_user
   before_action :ensure_correct_user, {only: [:edit, :update, :destroy]}
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
-    @posts = Post.page(params[:page]).per(8)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(8)
   end
 
   def show
-    @post = Post.find_by(id: params[:id])
     @user = @post.user
   end
 
@@ -18,10 +16,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(
-      content: params[:content],
-      user_id: @current_user.id
-    )
+    @post = Post.new(post_params)
+    @post.user_id = @current_user.id
     if @post.save
       flash[:notice] = "投稿を作成しました"
       redirect_to("/")
@@ -31,13 +27,11 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find_by(id: params[:id])
   end
 
   def update
-    @post = Post.find_by(id: params[:id])
-    @post.content = params[:content]
-    if @post.save
+
+    if @post.update!(post_params)
       flash[:notice] = "投稿を編集しました"
       redirect_to("/")
     else
@@ -46,16 +40,26 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find_by(id: params[:id])
     @post.destroy
+    
     flash[:notice] = "投稿を削除しました"
     redirect_to("/")
   end
+
+  private
 
   def ensure_correct_user
     @post = Post.find_by(id: params[:id])
     if @post.user_id != @current_user.id
       redirect_to("/")
     end
+  end
+
+  def post_params
+    params.require(:post).permit(Post::PERMITTED_PARAMS)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end
