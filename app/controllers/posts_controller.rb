@@ -46,6 +46,7 @@ class PostsController < ApplicationController
     redirect_to("/")
   end
 
+
   private
 
   def ensure_correct_user
@@ -63,3 +64,4 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 end
+
