@@ -1,4 +1,4 @@
-    <% @other_rooms.each do |room| %>                                                                                                                                                                                                           
-      Room: <%= room.user.name %> <br>                                                                                                                                                                                                          
-      <%= Message.find_by(id: room.room.message_ids.last)&.message %> <br>                                                                                                                                                                      
+    <% @other_rooms.each do |room| %>                                                                                                                                                                                                              
+      <%= link_to(room.user.name, "/users/#{room.user.id}") %> <br>                                                                                                                                                                                            
+      <%= link_to(Message.find_by(id: room.room.message_ids.last)&.message, "/message/#{room.user.id}") %> <br>
     <% end %>
