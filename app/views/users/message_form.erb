@@ -1,0 +1,9 @@
+<div class="post">
+  <h1>DMを送る</h1>
+  <div class="post-form">
+    <%= form_with model: @post do |f| %>
+      <%= f.text_area :content %>
+      <%= f.submit "投稿" %>
+    <% end %>
+  </div>
+</div>
