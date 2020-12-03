@@ -365,3 +365,112 @@
   border-radius: 16px;
   margin: 26px 0px 0px 400px;
 }
+
+//ここからDMフォーム
+.dm {
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 360px;
+}
+
+.dm h1 {
+  width: 124px;
+  height: 36px;
+  background-color: #FEA7C0;
+  color: white;
+  font-size: 26px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.message-form {
+  margin-top: 20px;
+  width: 610px;
+  height: 360px;
+  border: solid;
+  border: 1px solid;
+  border-radius: 30px;
+  border-color: #FEA7C0;
+  background-color: white;
+  padding: 40px 40px 40px 40px;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.message-form textarea {
+  width: 600px;
+  height: 300px;
+  border-color: #bbb;
+  resize: none;
+  font-size: 24px;
+}
+
+.message-form input {
+  width: 100px;
+  height: 50px;
+  background-color: #FEA7C0;
+  color: white;
+  font-size: 20px;
+  border: none;
+  border-radius: 16px;
+  margin: 12px 0px 0px 500px;
+}
+
+//ここからトーク一覧
+.message-list {
+  width: 100%;
+  height: auto;
+  margin-top: 40px;
+}
+
+.message-list h1 {
+  width: 136px;
+  height: 36px;
+  background-color: #FEA7C0;
+  color: white;
+  font-size: 26px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.message-item {
+  margin-top: 20px;
+}
+
+.message {
+  width: 690px;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 5px 5px 5px 5px;
+  border: solid;
+  border: 1px solid;
+  border-radius: 30px;
+  border-color: #FEA7C0;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.message-left {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.message-right {
+  width: 500px;
+  height: 100px;
+  margin-left: 100px;
+}
+
+.user-name {
+  font-size: 26px;
+  width: 520px;
+  height: 34px;
+  margin-left: 20px;
+  margin-bottom: 6px;
+  border-bottom: dotted 3px #FEA7C0;
+}
+

@@ -7,6 +7,29 @@
       <%= f.submit "投稿" %>
     <% end %>
   </div>
+
+    <div class="message-list">
+      <h1>トーク一覧</h1>
+      <div class="message-item">
+        <% @messages.each do |message| %>
+          <div class="message">
+            <div class="message-left">
+              <img src="<%= "/images/#{@user.image}" %>" >
+            </div>
+            <div class="message-right">
+              <div class="user-name">
+                <%= message.user.name %><br>
+              </div>
+              <div class="user-content">
+                <%= message.message %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  <!--
   <table>
     <thead>
         <tr>
@@ -24,3 +47,4 @@
     </tbody>
   </table>
 </div>
+-->
