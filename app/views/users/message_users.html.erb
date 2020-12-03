@@ -1,0 +1,4 @@
+    <% @other_rooms.each do |room| %>                                                                                                                                                                                                           
+      Room: <%= room.user.name %> <br>                                                                                                                                                                                                          
+      <%= Message.find_by(id: room.room.message_ids.last)&.message %> <br>                                                                                                                                                                      
+    <% end %>

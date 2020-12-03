@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get "users/index" => "users#index"
   get "posts/new" => "posts#new"
   get 'message/:id' => 'messages#show', as: 'message'
+  get "/users/last_message" => "posts/show_last_messages"
 
   resources :users, only: [:show, :update]
   resources :posts

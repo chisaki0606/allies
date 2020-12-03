@@ -46,6 +46,16 @@ class PostsController < ApplicationController
     redirect_to("/")
   end
 
+  def show_last_messages                                                                                                            
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(8)                                              
+    current_rooms = @current_user.user_rooms                                                                           
+    my_room_ids = []                                                                                                   
+    current_rooms.each do |user_room|                                                                                  
+      my_room_ids << user_room.room.id                                                                                 
+    end                                                                                                                
+    @other_rooms = UserRoom.where(room_id: my_room_ids).where.not(user_id: @current_user.id)
+    render("users/message_users.html.erb")                        
+  end 
 
   private
 
