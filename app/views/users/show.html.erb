@@ -16,16 +16,16 @@
       <p>自己紹介</p>
       <%= @user.introduction %>
     </div>
+
     <% if @user.id == @current_user.id %>
       <div class="user-details-edit">
         <%= link_to("編集", "/users/#{@user.id}/edit", class: "user-details-edit-button") %>
       </div>
-    <% end %>
-
+    <% else %>
       <div class="user-details-message">
         <%= link_to("DMを送る", "/", class: "user-details-message-button") %>
       </div>
-
+    <% end %>
   </div>
 
     <div class="post-list">
