@@ -23,7 +23,7 @@
       </div>
     <% else %>
       <div class="user-details-message">
-        <%= link_to("DMを送る", "/", class: "user-details-message-button") %>
+        <%= link_to("DMを送る", message_path(@user.id), class: "user-details-message-button") %>
       </div>
     <% end %>
   </div>

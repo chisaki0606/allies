@@ -7,8 +7,11 @@ Rails.application.routes.draw do
   post "signup" => "users#create"
   get "users/index" => "users#index"
   get "posts/new" => "posts#new"
+  get 'message/:id' => 'messages#show', as: 'message'
 
   resources :users, only: [:show, :update]
   resources :posts
+  resources :messages, only: [:create]
+  
   root to: 'posts#index'
 end
