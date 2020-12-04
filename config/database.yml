@@ -20,3 +20,6 @@ production:
   username: allies
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: localhost
+
+production:
+  secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
