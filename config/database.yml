@@ -13,3 +13,10 @@ development:
 test:
   <<: *default
   database: myapp_test
+
+production:
+  <<: *default
+  database: application_name_production
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
