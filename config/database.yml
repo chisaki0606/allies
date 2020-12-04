@@ -17,6 +17,6 @@ test:
 production:
   <<: *default
   database: application_name_production
-  username: root
+  username: allies
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+  host: localhost
