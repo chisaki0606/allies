@@ -6,34 +6,6 @@
     <li>
       <%= link_to("ユーザー一覧から探す", "/users/index") %>
     </li>
-    <li>
-      <div class="accbox">
-        <input type="checkbox" id="label1" class="cssacc" />
-        <label for="label1">セクシュアリティと恋愛対象で絞り込む</label>
-        <div class="accshow">
-            セクシュアリティを選択<br>
-            <input type="checkbox" name="female" value="female">female<br>
-            <input type="checkbox" name="male" value="male">male<br>
-            <input type="checkbox" name="FtM" value="FtM">FtM<br>
-            <input type="checkbox" name="FtX" value="FtX">FtX<br>
-            <input type="checkbox" name="MtF" value="MtF">MtF<br>
-            <input type="checkbox" name="MtX" value="MtX">MtX<br>
-            <input type="checkbox" name="Queer" value="Queer">Queer<br>
-            <input type="checkbox" name="DSD" value="DSD">DSD<br>
-            <input type="checkbox" name="その他" value="その他">その他<br>
-            <br>
-            恋愛対象を選択<br>
-            <input type="checkbox" name="female" value="female">female<br>
-            <input type="checkbox" name="male" value="male">male<br>
-            <input type="checkbox" name="バイセクシュアル" value="バイセクシュアル">バイセクシュアル<br>
-            <input type="checkbox" name="パンセクシュアル" value="パンセクシュアル">パンセクシュアル<br>
-            <input type="checkbox" name="アセクシュアル" value="アセクシュアル">アセクシュアル<br>
-            <input type="checkbox" name="その他" value="その他">その他<br>
-            <br>
-            <input type="submit" value="絞り込む">
-        </div>
-      </div>
-    </li>
   </ul>
   <div class="contents-list">
     <% @posts.each do |post| %>

@@ -474,3 +474,60 @@
   border-bottom: dotted 3px #FEA7C0;
 }
 
+//ここからDM一覧
+.dm-list {
+  width: 100%;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 360px;
+}
+
+.dm-list h1 {
+  width: 100px;
+  height: 36px;
+  background-color: #FEA7C0;
+  color: white;
+  font-size: 26px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 16px;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.message-item {
+  margin-top: 20px;
+}
+
+.dm-message {
+  width: 690px;
+  height: 100px;
+  margin-bottom: 20px;
+  padding: 5px 5px 5px 5px;
+  border: solid;
+  border: 1px solid;
+  border-radius: 30px;
+  border-color: #FEA7C0;
+  background-color: white;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.dm-message-left {
+  float: left;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.dm-message-right {
+  width: 500px;
+  height: 100px;
+  margin-left: 100px;
+}
+
+.dm-user-name {
+  font-size: 26px;
+  width: 520px;
+  height: 34px;
+  margin-left: 20px;
+  margin-bottom: 6px;
+  border-bottom: dotted 3px #FEA7C0;
+}

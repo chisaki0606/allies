@@ -147,42 +147,6 @@ header a {
   font-size: 16px;
 }
 
-.accbox label {
-  display: block;
-  color: white;
-  font-weight: bold;
-  background: #FEA7C0;
-  cursor :pointer;
-  transition: all 0.5s;
-}
-
-.accbox label:hover {
-  background : #FEA7C0;
-}
-
-#label1 {
-  display: none;
-}
-
-.accbox .accshow {
-  height: 0;
-  padding: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: 0.8s;
-}
-
-.cssacc:checked + label + .accshow {
-  height: auto;
-  padding: 5px;
-  background: #fff5eb;
-  opacity: 1;
-}
-
-.accbox .accshow p {
-  margin: 15px 10px
-}
-
 //ここから新規投稿ページ
 .post {
   width: 100%;
