@@ -4,14 +4,14 @@
     <% @other_rooms.each do |room| %>
       <div class="dm-message">
         <div class="dm-message-left">
-          <!--ここにユーザー画像-->
+          <img src="<%= "/images/#{room.user.image}" %>" >
         </div>
         <div class="dm-message-right">
           <div class="dm-user-name">
             <%= link_to(room.user.name, "/users/#{room.user.id}") %> <br>                                                                                                                                                                                            
           </div>
           <div class="dm-user-content">
-            <%= link_to(Message.find_by(id: room.room.message_ids.last)&.message, "/message/#{room.user.id}") %> <br>
+            <%= link_to(Message.find_by(id: room.room.message_ids.last)&.message.truncate(40), "/message/#{room.user.id}") %> <br>
           </div>
         </div>
       </div>

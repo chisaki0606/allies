@@ -1,5 +1,6 @@
 <div class="dm">
   <h1>DMを送る</h1>
+  <h1>テスト</h1>
   <div class="message-form">
     <%= form_with model: @message do |f| %>
       <%= f.text_area :message %>
@@ -14,7 +15,7 @@
         <% @messages.each do |message| %>
           <div class="message">
             <div class="message-left">
-              <img src="<%= "/images/#{@user.image}" %>" >
+              <img src="<%= "/images/#{message.user.image}" %>" >
             </div>
             <div class="message-right">
               <div class="user-name">
@@ -29,22 +30,3 @@
       </div>
     </div>
 
-  <!--
-  <table>
-    <thead>
-        <tr>
-            <td>投稿者名</td>
-            <td>投稿内容</td>
-        </tr>
-    </thead>
-    <tbody>
-        <% @messages.each do |message| %>
-            <tr>
-                <td><%= message.user.name %></td>
-                <td><%= message.message %></td>
-            </tr>
-        <% end %>
-    </tbody>
-  </table>
-</div>
--->
