@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   get "login" => "users#login_form"
   post "login" => "users#login"
   get "logout" => "users#logout"
