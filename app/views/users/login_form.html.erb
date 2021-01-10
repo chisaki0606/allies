@@ -9,13 +9,14 @@
     <%= form_with model: @user do |f| %>
       <p>メールアドレス</p>
       <li>
-      <%= f.email_field :email %>
+      <%= f.email_field :email, value: @user_email %>
       </li>
       <p>パスワード</p>
       <li>
-      <%= f.password_field :password %>
+      <%= f.password_field :password, value: @user_password %>
       </li>
       <%= f.submit "ログイン" %>
     <% end %>
   </div>
+  <br><p>※すぐにログインできるように現在はログイン情報を初期値として設定しています。</p>
 </div>
